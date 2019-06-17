@@ -1,5 +1,5 @@
 ---
-.layout: post
+layout: post
 title:  "C#-Extension-合集"
 date:   2019-03-17 22:39
 categories: C# Extension
