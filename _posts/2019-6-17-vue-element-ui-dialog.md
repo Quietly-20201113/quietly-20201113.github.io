@@ -9,6 +9,8 @@ tags: element-ui vue
 ------
 **element-ui中Dialog弹框拖动**
 
+[自己码的源码](https://github.com/18487115313/element-el-dragDialog.git)
+
 > 借用网上样例，网上样例不支持在浏览器可见范围内拖动，在结合[vue-element-admin](<https://panjiachen.github.io/vue-element-admin-site/zh/>)中弹框拖动的模块合并更改的。
 >
 > > 问题：与容器的position: absolute冲突
