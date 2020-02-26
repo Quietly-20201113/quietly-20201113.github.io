@@ -3429,7 +3429,7 @@ var Gitment = function () {
       }).catch(function (e) {
         _this.state.user.isLoggingIn = false;
         // console.log("弹出1="+JSON.stringify(e))
-        swal("登录这边出了问题!", "可能是浏览器内核原因造成无法登录成功，您可以换一个浏览器")
+        swal("登录这边出了问题!", "可能是浏览器内核原因造成无法登录成功，您可以换一个浏览器,或者进入我的github留言 \n https://github.com/18487115313/18487115313.github.io/issues")
         // alert(e);
       });
     } else {
