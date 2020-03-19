@@ -170,8 +170,6 @@ export default {
 }
 ```
 
-
-
 **hooks用法**
 
 > 还不熟练  简单写写以后完善
@@ -199,4 +197,60 @@ export default connect(null)(DvaPage)
 
 
 ```
+
+**react-redux运用**
+
+1、树结构详解（切勿多次定义属性名。以免树结构层次变深）
+
+>reducers中返回的命名是state树最底下的名字
+
+```react
+
+//reducers.js
+import * as Audit from './auditTypes';
+
+//treeData 最终取值属性名
+//treeReducer 可在合并时更改
+const treeReducer = (state = [], action) => {
+    switch(action.type) {
+      case Audit.AUDIT_TREE:
+        return {
+          ...state, treeData: action.treeData
+        }
+      default:
+        return state
+    }
+  }
+  
+  export default treeReducer;
+```
+
+```react
+import { combineReducers } from 'redux';
+import treeReducer from './auditReducers';
+//treeReducer在此处还能更改树结构（合并处）
+const auditReducers = combineReducers({
+    treeReducer,
+    //treeData : treeReducer 将treeReducer重命名为treeData
+  })
+  
+  export default auditReducers;
+```
+
+> 合并后最上层属性为合并时定义的属性名；如：auditReducers
+>
+> 当取值时取值依次为：树结构.合并名.单个reducers名.定义名；
+>
+> 如：
+
+```react
+//业务.js(取值操作)
+const mapStateToProps = (state, ownProps) => {
+  return {
+    treeData: state.auditReducers.treeReducer.treeData
+  }
+}
+```
+
+**react对函数式组件优化**
 
