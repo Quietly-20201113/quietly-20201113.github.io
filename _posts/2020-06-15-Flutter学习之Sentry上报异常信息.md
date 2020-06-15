@@ -257,6 +257,12 @@ Sentry上报
 import 'package:sentry/sentry.dart'
 final String _dsn = 'Sentry服务模块地址';
 final RcSentry.SentryClient _sentry = new RcSentry.SentryClient(dsn: _dsn);
+
+		///提交异常到Sentry服务
+      _sentry.captureException(
+        exception: _errMap,
+        stackTrace: stackTrace,
+      );
 ```
 
 ##### 错误页面上报

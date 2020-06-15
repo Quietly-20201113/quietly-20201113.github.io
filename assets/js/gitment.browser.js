@@ -2875,7 +2875,7 @@ function renderHeader(_ref, instance) {
 
   var issueLink = document.createElement('a');
   issueLink.className = 'gitment-header-issue-link';
-  issueLink.href = meta.html_url;
+  issueLink.href = 'https://github.com/18487115313/18487115313.github.io/issues';
   issueLink.target = '_blank';
   issueLink.innerText = '查看GitHub中Issue';
   container.appendChild(issueLink);
