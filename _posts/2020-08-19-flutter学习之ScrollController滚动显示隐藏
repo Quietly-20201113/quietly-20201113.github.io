@@ -2,7 +2,7 @@
 layout: post
 title:  "Flutter-使用mixin抽离ScrollController滚动显示隐藏"
 date:   2020-08-19 15:48
-categories: App
+categories: Flutter
 tags: Flutter
 ---
 * content
