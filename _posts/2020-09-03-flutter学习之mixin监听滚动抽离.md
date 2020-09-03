@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "2020-09-03 flutter学习之mixin抽离监听滚动"
+title:  "flutter学习之mixin抽离监听滚动"
 date:   2020-09-03 15:56
 categories: flutter
 tags: flutter
