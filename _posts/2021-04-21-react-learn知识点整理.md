@@ -323,3 +323,203 @@ tags: react 面试
 >
 > react中声明函数,useState都用到const
 
+###### 18、为什么说React中的props是只读的？
+
+> React 组件都必须像纯函数一样保护它们的 props 不被更改。
+>
+> 将react组件理解成纯函数,数据流驱动,参数传入不允许做更改
+>
+> 扩展 : 
+>
+> state内容可以更改,但是不允许直接赋值,需要借助setState
+>
+> props用于定义外部接口，state用于记录内部状态
+>
+> props的赋值在于外部世界使用组件，state的赋值在于组件内部
+>
+> 组件不应该改变props的值，而state存在的目的就是让组件来修改的
+>
+> state 只能在constructor中设置默认值
+>
+> setState修改state的值是异步的
+
+###### 19、你有用过哪些React的表单库吗？说说它们的优缺点
+
+> redux-form 
+>
+> > 26.4k 
+> >
+> > 不支持第三方表单验证，需手动验证
+> >
+> > 性能优异，虽然大家都不喜欢它
+>
+>  react-json-schema-form 
+>
+> > 复杂的表单交互不易用，比如我们这边有些 array 结构的 form 表单，有大量的数据条数（在50条左右），react-json-schema-form 交互使用了每个字段占用一行的设计，也就是说如果有6个字段，共50条数据，需要占用 300行空间；
+> >
+> > 不支持通过 js 表达式 ；
+> >
+> > uiSchema 和 json-schema 分开，导致在遇到深层级节点时不好配，还有节点有改动，需要同步 uiSchema。
+>
+> formik
+>
+> > 15k
+> >
+> > 支持，可以使用 `Yup` `schema `第三方表单验证
+> >
+> > `Field` 组件在大型的 form 表单中会出现性能问题，可以使用 `FastField` 组件改善
+>
+> unform
+>
+> react-hook-form
+>
+> > 8.7k
+> >
+> > 支持多种第三方验证，像 `Yup`, `Joi`, `Superstruct`
+> >
+> > 在非受控组件中表现最好但是不会触发 re-render, 但是如果触发了 re-render 性能比不上 `redux-form` 和 `formik`
+
+###### 20、如果组件的属性没有传值，那么它的默认值是什么？
+
+> true
+>
+> 官方文档写了,别满脑子是undefined
+
+###### 21、可以使用TypeScript写React应用吗？怎么操作？
+
+[答案借鉴地址](https://github.com/haizlin/fe-interview/issues/899)
+
+> 使用ts启动新的 create react app项目
+> `yarn create react-app my-app --typescript`
+> 将ts添加到已经创建好的create react app项目中
+> `yarn add typescript @types/node @types/react @types/react-dom @types/jest`
+> PS:适用于`react-scripts@2.1.0` 及更高版本。
+
+###### 22、`super()`和`super(props)`有什么区别？
+
+[答案借鉴地址](https://github.com/haizlin/fe-interview/issues/898)
+
+> react 中的class 是基于es6的规范实现的, 继承是使用extends关键字实现继承的，子类必须在constructor()中调用super() 方法否则新建实例
+> 就会报错，报错的原因是 子类是没有自己的this对象的，它只能继承父类的this对象，然后对其进行加工，而super()就是将父类中的this对象继承给子类的，没有super() 子类就得不到this对象。
+>
+> 如果你使用了constructor就必须写super() 这个是用来初始化this的，可以绑定事件到this上
+> 如果你想要在constructor中使用this.props,就必须给super添加参数 super(props)
+> 注意，无论有没有 constructor，在render中的this.props都是可以使用的，这是react自动附带的
+> 如果没有用到constructor 是可以不写的，react会默认添加一个空的constroctor.
+>
+> 重点 : 是在constructor中使用this.props
+
+###### 22、你有使用过loadable组件吗？它帮我们解决了什么问题？
+
+> `react-loadable`和 `loadable component`，用于代码分割，解决打包体积过大的问题
+
+###### 23、你有使用过suspense组件吗？它帮我们解决了什么问题？
+
+[答案借鉴地址](https://zh-hans.reactjs.org/docs/concurrent-mode-suspense.html)
+
+[实验加载地址](https://codesandbox.io/s/frosty-hermann-bztrp?file=/src/index.js)
+
+> 让你可以“等待”目标代码加载，并且可以直接指定一个加载的界面（像是个 spinner）
+>
+> ```react
+> const ProfilePage = React.lazy(() => import('./ProfilePage')); // 懒加载
+> 
+> // 在 ProfilePage 组件处于加载阶段时显示一个 spinner
+> <Suspense fallback={<Spinner />}>
+>   <ProfilePage />
+> </Suspense>
+> ```
+>
+> 以下注意 : 
+>
+> ##### 想要用Suspense 成为组件读取异步数据的主要方式有以下问题:
+>
+> **它不是数据获取的一种实现。**它并不假定你使用 GraphQL，REST，或者任何其他特定的数据格式、库、数据传输方式、协议。
+>
+> **它不是一个可以直接用于数据获取的客户端。**你不能用 Suspense 来“替代” `fetch` 或者 Relay。不过你可以使用集成 Suspense 的库（比如说，[新的 Relay API](https://relay.dev/docs/en/experimental/api-reference)）。
+>
+> **它不使数据获取与视图层代码耦合。**它协助编排加载状态在 UI 中的显示，但它并不将你的网络逻辑捆绑到 React 组件。
+>
+> ##### Suspense 到底有什么用呢 
+>
+> **它能让数据获取库与 React 紧密整合。**如果一个数据请求库实现了对 Suspense 的支持，那么，在 React 中使用 Suspense 将会是自然不过的事。
+>
+> **它能让你有针对性地安排加载状态的展示。**虽然它不干涉数据*怎样*获取，但它可以让你对应用的视图加载顺序有更大的控制权。
+>
+> **它能够消除 race conditions。**即便是用上 `await`，异步代码还是很容易出错。相比之下，Suspense 更给人*同步*读取数据的感觉 —— 假定数据已经加载完毕。
+>
+> 扩展 : `react-cache`与Suspense使用
+
+###### 24、怎样动态导入组件？
+
+> import 
+>
+> require
+>
+> react-loadable
+
+###### 25、如何给非控组件设置默认的值？
+
+[答案借鉴地址](https://github.com/haizlin/fe-interview/issues/894)
+
+> 在React中，所谓受控组件和非受控组件，是针对表单而言的。
+>
+> - 表单元素依赖于状态(state)，表单元素需要默认值实时映射到状态的时候，就是受控组件
+>
+> ```react
+> <input name="username" type="text" value={this.state.username} onChange={this.handleChange} />
+> ```
+>
+> - 不通过state控制表单元素，而是通过ref来控制的表单元素就是非受控组件
+>
+> ```react
+> <input name="username" type="text" ref={username=>this.username=username}/>
+> ```
+
+###### 26、怎样使用Hooks获取服务端数据？
+
+> 需要 `useEffect`与`useState`配合
+>
+> 要求函数式写法,不能是class写法
+>
+> ```react
+> ///案例一
+> const {data,setData} = useState({});//渲染值
+> ///页面初始化
+> useEffect(()=>{
+>     axios.get().then(res => {
+>         setData(res);
+>     })
+> },[]);
+> ```
+>
+> ```react
+> ///案例二
+> const {data,setData} = useState({});//渲染值
+> ///条件调用
+> const getPostData = ({data}) =>{
+>      axios.get(data).then(res => {
+>         setData(res);
+>     })
+> }
+> ```
+
+###### 27、使用Hooks要遵守哪些原则？
+
+> 官网说的
+>
+> ### 只在最顶层使用 Hook
+>
+> **不要在循环，条件或嵌套函数中调用 Hook，** 确保总是在你的 React 函数的最顶层以及任何 return 之前调用他们。遵守这条规则，你就能确保 Hook 在每一次渲染中都按照同样的顺序被调用。这让 React 能够在多次的 `useState` 和 `useEffect` 调用之间保持 hook 状态的正确。(如果你对此感到好奇，我们在[下面](https://zh-hans.reactjs.org/docs/hooks-rules.html#explanation)会有更深入的解释。)
+>
+> ### 只在 React 函数中调用 Hook
+>
+> **不要在普通的 JavaScript 函数中调用 Hook。**你可以：
+>
+> - ✅ 在 React 的函数组件中调用 Hook
+> - ✅ 在自定义 Hook 中调用其他 Hook (我们将会在[下一页](https://zh-hans.reactjs.org/docs/hooks-custom.html) 中学习这个。)
+>
+> 遵循此规则，确保组件的状态逻辑在代码中清晰可见。
+
+###### 28、render方法的原理你有了解吗？它返回的数据类型是什么？
+
