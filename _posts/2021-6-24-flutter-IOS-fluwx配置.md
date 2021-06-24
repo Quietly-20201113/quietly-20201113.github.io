@@ -31,7 +31,7 @@ tags: Flutter IOS
 >
 > > 1、`https://developer.apple.com/`-->`account`
 > >
-> > 2、![](screenshot/flutter/flutter-fluwx-ios-account.png)
+> > 2、![示例图1](https://github.com/Quietly-20201113/PictureSpace/blob/main/flutter_fluwx/flutter-fluwx-ios-account.png?raw=true "示例图1")
 > >
 > > 3、点击`identifiers`
 > >
@@ -57,7 +57,9 @@ tags: Flutter IOS
 
 ### 丁、XCode配置
 
-1、![](screenshot/flutter/flutter-fluwx-ios-xcode.png)
+1、![](https://github.com/Quietly-20201113/PictureSpace/blob/main/flutter_fluwx/flutter-fluwx-ios-xcode.png?raw=true)
+
+
 
 2、将域名写入 Domains，格式如下`applinks:你的域名`，不需要https
 
