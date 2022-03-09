@@ -2875,7 +2875,7 @@ function renderHeader(_ref, instance) {
 
   var issueLink = document.createElement('a');
   issueLink.className = 'gitment-header-issue-link';
-  issueLink.href = 'https://github.com/18487115313/18487115313.github.io/issues';
+  issueLink.href = 'https://github.com/Quietly-20201113/Quietly-20201113.github.io/issues';
   issueLink.target = '_blank';
   issueLink.innerText = '查看GitHub中Issue';
   container.appendChild(issueLink);
@@ -3429,7 +3429,7 @@ var Gitment = function () {
       }).catch(function (e) {
         _this.state.user.isLoggingIn = false;
         // console.log("弹出1="+JSON.stringify(e))
-        swal("登录这边出了问题!", "可能是浏览器内核原因造成无法登录成功，您可以换一个浏览器,或者进入我的github留言 \n https://github.com/18487115313/18487115313.github.io/issues")
+        swal("登录这边出了问题!", "可能是浏览器内核原因造成无法登录成功，您可以换一个浏览器,或者进入我的github留言 \n https://github.com/Quietly-20201113/Quietly-20201113.github.io/issues")
         // alert(e);
       });
     } else {

@@ -1,17 +1,19 @@
 ---
 layout: post
-title:  "C#-分页PagedList源码"
-date:   2019-03-12 20:56
+title: "C#-分页PagedList源码"
+date: 2019-03-12 20:56
 categories: C# PagedList
 tags: C#
 ---
-* content
-{:toc}
-------
 
-**C#的一个分页，排序集合类**  
+- content
+  {:toc}
 
- 1.方法扩展（扩展类中）
+---
+
+**C#的一个分页，排序集合类**
+
+1.方法扩展（扩展类中）
 
 ```c#
        public static class QueryExtension
@@ -156,10 +158,10 @@ tags: C#
     }
 ```
 
-2.页面类  
+2.页面类
 
 ```c#
-  public class PageCtl 
+  public class PageCtl
     {
         /// <summary>
         /// 当前页
@@ -188,7 +190,7 @@ tags: C#
     }
 ```
 
-3.分页通用类  
+3.分页通用类
 
 ```c#
 /// <summary>
@@ -452,25 +454,22 @@ tags: C#
     }
 ```
 
-
-
-5.具体调用  (VB)
+5.具体调用 (VB)
 
 ```c#
  Dim page As New PageCtl With {.PageIndex = pageSize, .PageSize = pageNum, .OrderByField = "CityID"}'定义，赋页码，行数，排序字段
  res.datas = model.ToPagedList(page)'扩展方式调用
 ```
 
-6.具体调用 (C# )  
+6.具体调用 (C# )
 
 ```C#
 var page = new PageCtl{PageIndex = pageSize, PageSize = pageNum, OrderByField = "CityID"}
 res.datas = model.ToPagedList(page)'扩展方式调用
 ```
 
-***
+---
 
-**提供代码[传送阵](https://github.com/18487115313/C-PagedList)**
+**提供代码[传送阵](https://github.com/Quietly-20201113/C-PagedList)**
 
-***
-
+---
