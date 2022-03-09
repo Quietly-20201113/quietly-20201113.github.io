@@ -1,5 +1,5 @@
 # Site settings 配置站点
-title: "还是夸张一点技术专栏"
+title: "这代码不好写技术专栏"
 description: "一个没秃头的年轻人"
 keyword: "React Flutter C# VB Vue 小程序 Taro vue3 Electron"
 url: "https://Quietly-20201113.github.io" # your host
@@ -17,8 +17,8 @@ footer:
   since: 2019
 
 # Author 配置博主信息
-author: "还是夸张一点"
-nickname: "还是夸张一点"
+author: "这代码不好写"
+nickname: "这代码不好写"
 bio: "React Flutter C# VB Vue 小程序 Taro vue3 Electron"
 avatar: "http://106.54.173.217:81/assets/img/profile.png"
 
