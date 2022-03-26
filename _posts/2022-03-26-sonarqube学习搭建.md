@@ -93,13 +93,13 @@ jdk(no)->下载jdk->安装jdk->启动
 
 ##### 5、使用
 
-![61bfe986f3b3560001bb1481.png](https://upload-images.jianshu.io/upload_images/24360331-14a1becdc2138e70.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![61bfe986f3b3560001bb1481.png](https://github.com/Quietly-20201113/PictureSpace/blob/main/sonarqube/61bfe986f3b3560001bb1481.png?raw=true)
 
 
-![61bfea8dfafd5900011f8e30.png](https://upload-images.jianshu.io/upload_images/24360331-6a952f32eaaf6624.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![61bfea8dfafd5900011f8e30.png](https://github.com/Quietly-20201113/PictureSpace/blob/main/sonarqube/61bfea8dfafd5900011f8e30.png?raw=true)
 
 
-![61bfea9174c73a0001ed9b2b.png](https://upload-images.jianshu.io/upload_images/24360331-64a6c93e8cb36f66.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![61bfea9174c73a0001ed9b2b.png](https://github.com/Quietly-20201113/PictureSpace/blob/main/sonarqube/61bfea9174c73a0001ed9b2b.png?raw=true)
 
 ****
 
@@ -111,4 +111,4 @@ jdk(no)->下载jdk->安装jdk->启动
 
 ##### 7、使用效果
 
-![61bfeb23de155200018bb364.png](https://upload-images.jianshu.io/upload_images/24360331-7b248ef09bd8d68f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![61bfeb23de155200018bb364.png](https://github.com/Quietly-20201113/PictureSpace/blob/main/sonarqube/61bfeb23de155200018bb364.png?raw=true)
